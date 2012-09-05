@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MOGAT:Higher-lower</title>
+</head>
+<body>
+<h1 style="text-align: center;">Welcome to Higher-Lower</h1>
+          <p style="text-align:center;">
+	    In this game, we are going to play two notes to you, one
+	    after the other. Each note is of a duration of 2
+	    seconds. <br /><br />You should select which note had a higher pitch,
+      the first one or the second one, by clicking on the
+      appropriate picture. <br /><br /><br /></p>
+
+      <script>
+        function startgame(){
+          alert("Please make sure your headphones are connected");
+          document.getElementById('displaybox').innerHTML='Changed';
+          document.getElementById('displaybox').style.display = "block";
+	  document.getElementById('b1').style.display = "none";
+          
+        }
+      </script>
+
+      <div id="b1"><input type=button value='Click Here to Start' onclick=startgame(); /></div>
+
+      <div id='displaybox' style="display:none;"> hello</div>
+
+    </body>
+
+  </html>

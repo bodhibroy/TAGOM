@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MOGAT:Higher-lower</title>
+</head>
+<body>
+<h1 style="text-align: center;">Welcome to Higher-Lower</h1>
+          <p style="text-align:center;">
+	    In this game, we are going to play two notes to you, one
+	    after the other. Each note is of a duration of 2
+	    seconds. <br /><br />You should select which note had a higher pitch,
+      the first one or the second one, by clicking on the
+      appropriate picture. <br /><br /><br /></p>
+
+      <script>
+        function startgame(){
+          alert("Please make sure your headphones are connected");
+          document.getElementById('b1').style.display = "none";
+          document.getElementById('t1').style.display = "block";
+	  document.getElementById('replay').style.display = "block";
+        }
+      </script>
+
+      <center>
+	<div id="b1"><input type=button value='Click Here to Start' onclick=startgame(); />
+        </div>
+      </center>
+      <br /><br />
+      
+      <center>
+      <div id="replay" style="display:none;position:relative;right:50px;top:100px;"><td> <img src="./images/replay.png" onClick='replay_code();'></td></div>
+      <div id="t1" style=" position:relative;display:none; top:190px;">
+	<table border="0">
+	  <tr>
+	    <td> <img src="./images/_hl_1.png" width="300" height="300" onClick='some_js_code()'/></td>
+	    <td> <img src="./images/_hl_2.png" width="300" height="300" onClick='some_js_code()'/></td>
+	  </tr>
+        </table>
+      </div>
+      </center>
+    </body>
+
+  </html>
