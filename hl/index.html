@@ -1,9 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MOGAT:Higher-lower</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MOGAT:Higher-lower</title>
+
+<script type="text/javascript" src="script/music_fetcher.js"></script> 
+
+<script type="text/javascript" src="script/evaluator.js"></script>
+
+
+<!-- required -->
+<link rel="stylesheet" type="text/css" href="360player.css" />
+
+<!-- special IE-only canvas fix -->
+<!--[if IE]><script type="text/javascript" src="script/excanvas.js"></script><![endif]-->
+
+<!-- Apache-licensed animation library -->
+<script type="text/javascript" src="script/berniecode-animator.js"></script>
+
+<!-- the core stuff -->
+<script type="text/javascript" src="../soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
+<script type="text/javascript" src="script/360player.js"></script>
+
+<script type="text/javascript">
+soundManager.setup({
+  // path to directory containing SM2 SWF
+  url: '../soundmanager2/swf/'
+});
+</script>
+
+<!-- soundManager.useFlashBlock: related CSS -->
+<!--link rel="stylesheet" type="text/css" --
+  --href="../sm/flashblock/flashblock.css" / -->
+
+<script type="text/javascript">
+  function alertAtBeginning()
+  {
+  alert("Please put on your headphones and press OK");
+  }
+</script>
+
+
 </head>
-<body>
+
+
+<body bgcolor="#F4F0D7">
+
 <h1 style="text-align: center;">Welcome to Higher-Lower</h1>
           <p style="text-align:center;">
 	    In this game, we are going to play two notes to you, one
@@ -11,33 +53,55 @@
 	    seconds. <br /><br />You should select which note had a higher pitch,
       the first one or the second one, by clicking on the
       appropriate picture. <br /><br /><br /></p>
-
-      <script>
-        function startgame(){
-          alert("Please make sure your headphones are connected");
-          document.getElementById('b1').style.display = "none";
-          document.getElementById('t1').style.display = "block";
-	  document.getElementById('replay').style.display = "block";
-        }
-      </script>
-
-      <center>
-	<div id="b1"><input type=button value='Click Here to Start' onclick=startgame(); />
-        </div>
-      </center>
-      <br /><br />
       
+
+      
+
       <center>
-      <div id="replay" style="display:none;position:relative;right:50px;top:100px;"><td> <img src="./images/replay.png" onClick='replay_code();'></td></div>
-      <div id="t1" style=" position:relative;display:none; top:190px;">
+	
+          Difference in value of octave: <input type="text"
+          id="differ" value="6" size="1" />
+
+<div id="score" style="float:right;display:none;">
+	 <u><b>Points</b></u><div id ="point" style="font-family:Arial,Helvetica,sans-serif;font-size:200%;color:#ff0033;" >0</div>
+	 <u><b>Number of Tries</b></u><div id ="try" style="font-family:Arial,Helvetica,sans-serif;font-size:200%;color:#3300ff;">0</div>
+</div>
+	  
+          
+	<div id="b1" style="position:relative; top:10px;"><button onclick="alertAtBeginning();start_game()">Start game</button> </div>
+      </center>
+
+      <br /><br />
+
+
+      	<div id="replay"
+      	style="position:relative;display:none;left:45%;"> <img src="images/playAgainButton.png"
+      	onClick='start_game();'></div>
+ 
+      <center>
+	<div id="music" style="display:none;position:relative;right:5%;">
+	  <table border="0">
+	    <tr>
+	      <td><div class="ui360" style="position:relative;bottom:100px;left:50%"><a id="m1" href="some_tone.ogg">First tone</a></div></td>
+
+	      <td><div class="ui360"
+	      style="position:relative;bottom:100px;left:50%"><a id="m2"
+	      href="some_tone.ogg">Second tone</a></div></td>
+	    </tr>
+	  </table>  
+    </div>
+
+      <div id="t1" style=" position:relative;display:none;
+			  top:-70px;">
 	<table border="0">
 	  <tr>
-	    <td> <img src="./images/_hl_1.png" width="300" height="300" onClick='some_js_code()'/></td>
-	    <td> <img src="./images/_hl_2.png" width="300" height="300" onClick='some_js_code()'/></td>
+	    <td> <img src="./images/_hl_1.png" width="260" height="260" onclick='evaluate_User("0")'/></td>
+	    <td> <img src="./images/_hl_2.png" width="260" height="260" onclick='evaluate_User("1")'/></td>
 	  </tr>
         </table>
-      </div>
-      </center>
-    </body>
+    </div></center>
+    <div style="position:relative;top:20px;left:45%;"><a href="../">
+    <b>Go back to main page</b></a></div>
 
-  </html>
+<div style="position:relative;left:70%;"> <a href="../license.txt">Licensing</a>
+</body></html>

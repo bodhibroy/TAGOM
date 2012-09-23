@@ -2,12 +2,15 @@
 //
 //
 window.flag;
-function startgame(){
-    alert("Please put on your headphones and press Ok");
+
+function start_game()
+{
+    alert("Press OK to start playing");
     document.getElementById("t1").style.display="block"; 
-    document.getElementById("replay").style.display="block"; 
     document.getElementById("music").style.display="block"; 
     document.getElementById("b1").style.display="none"; 
+    document.getElementById("score").style.display="block"; 
+    document.getElementById("replay").style.display="none"; 
     
     var r1,r2,r3,str1,str2;
 
