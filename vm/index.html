@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MOGAT:Vocal Matcher</title>
+    
+
+    <script>
+      function change_val(){
+         var new_val=document.getElementById("progress_bar");
+         if(new_val.value>50){
+            new_val.value=50;}
+         else {new_val.value=100;}
+      }
+    </script>  
+  </head>
+
+  <body>
+    <center><h1> Welcome to Vocal Matcher</h1></center>
+
+    <div style="position:absolute;left:35%;top:13%;width:600px;">
+	    In this game, we are going to play one note to you.  The
+	    objective of the player is to sing back the note in the
+	    closest possible voice.  <br /><br /> There is a progress
+	    bar with an arrow sign next to it indicating your
+	    progress.  If you're singing in a lower pitch, the arrow
+	    will point upwards, indicating that you should sing in a
+	    higher pitch.  In case you are singing in a higher pitch,
+	    the arrow will point downwards, indicating that you should
+	    sing in a higher pitch.
+    </div>
+
+    
+
+    <div style="position:relative;top:250px;left:43%;">
+      <progress id="progress_bar"value="29" max="100"></progress><br />
+      <button onclick="change_val();">Increase</button>
+    </div>
+
+
+
+
+    <div style="position:relative;top:398px;left:45%;"><a href="../"> Go back to main page</a></div>
+  </body>
+<div style="position:relative;top:300px;left:38%;">This game is currently supported in Firefox, Opera, and Chrome.</div>
+</html>
